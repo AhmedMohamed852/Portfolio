@@ -157,6 +157,19 @@
       margin-top: 40px;
     }
 
+    /* Footer social icons hover effect */
+    footer .social-icons img {
+      width: 28px;
+      margin: 0 8px;
+      transition: 0.3s;
+      filter: brightness(0.7);
+    }
+    footer .social-icons img:hover {
+      filter: brightness(1);
+      transform: scale(1.2);
+      box-shadow: 0 0 12px var(--accent);
+    }
+
     @media (max-width: 600px) {
       h1 { font-size: 34px; }
       nav a { display: block; margin: 15px 0; }
@@ -216,10 +229,10 @@
 
   <footer>
     Ahmed Mohamed — This website was created by me. Studying at EraaSoft.<br>
-    <div>
-      <a href="https://www.facebook.com/share/1HjGm7okq5/" target="_blank"><img src="https://cdn-icons-png.flaticon.com/512/733/733547.png" style="width:22px; margin:0 5px;"></a>
-      <a href="https://www.linkedin.com/in/ahmedmohammed-jv/" target="_blank"><img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" style="width:22px; margin:0 5px;"></a>
-      <a href="https://github.com/AhmedMohamed852" target="_blank"><img src="https://cdn-icons-png.flaticon.com/512/733/733553.png" style="width:22px; margin:0 5px;"></a>
+    <div class="social-icons">
+      <a href="https://www.facebook.com/share/1HjGm7okq5/" target="_blank"><img src="https://cdn-icons-png.flaticon.com/512/733/733547.png"></a>
+      <a href="https://www.linkedin.com/in/ahmedmohammed-jv/" target="_blank"><img src="https://cdn-icons-png.flaticon.com/512/174/174857.png"></a>
+      <a href="https://github.com/AhmedMohamed852" target="_blank"><img src="https://cdn-icons-png.flaticon.com/512/733/733553.png"></a>
     </div>
   </footer>
 
