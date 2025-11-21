@@ -238,10 +238,10 @@
 
   <script>
     // Visitor counter top-right using localStorage
-    let count = localStorage.getItem('visitor');
+    let count = localStorage.getItem('visitorCount');
     if(!count){ count = 0; }
     count = parseInt(count) + 1;
-    localStorage.setItem('visitorCount', count);
+    localStorage.setItem('visitor', count);
     document.getElementById('visitorCount').innerText = count;
   </script>
 
