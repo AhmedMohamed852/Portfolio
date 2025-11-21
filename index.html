@@ -1,249 +1,208 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Ahmed Mohamed | Portfolio</title>
-
-  <style>
-    :root {
-      --bg: #07080c;
-      --bg2: #0d0f16;
-      --card: #11131b;
-      --primary: #82cfff;
-      --text: #e5e5e5;
-      --accent: #4aa3ff;
-    }
-
-    body {
-      margin: 0;
-      font-family: "Poppins", sans-serif;
-      background: var(--bg);
-      color: var(--text);
-      scroll-behavior: smooth;
-    }
-
-    header {
-      padding: 20px;
-      text-align: center;
-      background: var(--bg2);
-      position: sticky;
-      top: 0;
-      z-index: 100;
-      border-bottom: 1px solid #1c1c25;
-    }
-
-    nav a {
-      color: var(--primary);
-      margin: 0 22px;
-      text-decoration: none;
-      font-weight: bold;
-      transition: 0.35s;
-      font-size: 18px;
-    }
-
-    nav a:hover {
-      color: #fff;
-      transform: translateY(-3px);
-      text-shadow: 0 0 12px var(--primary);
-    }
-
-    .visitor-counter-top {
-      position: fixed;
-      top: 12px;
-      right: 20px;
-      background: var(--card);
-      padding: 6px 12px;
-      border-radius: 8px;
-      font-size: 16px;
-      color: var(--accent);
-      border: 1px solid #1e1f29;
-      z-index: 999;
-    }
-
-    .section {
-      padding: 90px 20px;
-      max-width: 1100px;
-      margin: auto;
-      animation: fadeIn 1.1s ease;
-    }
-
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(25px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-
-    .profile-img {
-      width: 210px;
-      height: 210px;
-      border-radius: 50%;
-      object-fit: cover;
-      display: block;
-      margin: 20px auto;
-      border: 4px solid var(--accent);
-      box-shadow: 0 0 25px rgba(74,163,255,0.4);
-      transition: 0.4s;
-    }
-
-    .profile-img:hover {
-      transform: scale(1.1);
-      box-shadow: 0 0 40px rgba(74,163,255,0.8);
-    }
-
-    h1 { transition: 0.3s; }
-    h1:hover { text-shadow: 0 0 20px var(--primary), 0 0 35px var(--primary); transform: scale(1.05); }
-    h1 { text-align: center; font-size: 48px; margin-bottom: 5px; color: var(--primary); }
-
-    h3 { transition: 0.3s; }
-    h3:hover { text-shadow: 0 0 15px var(--primary); transform: scale(1.05); }
-    h3 { text-align: center; font-size: 24px; color: #9ea3b0; }
-
-    .card {
-      background: var(--card);
-      padding: 28px;
-      margin: 30px 0;
-      border-radius: 14px;
-      border: 1px solid #1e1f29;
-      transition: 0.4s;
-    }
-
-    .card:hover {
-      transform: translateY(-6px);
-      box-shadow: 0 10px 30px rgba(0,0,0,0.55);
-      border-color: var(--accent);
-    }
-
-    .social a {
-      color: var(--primary);
-      font-size: 21px;
-      margin: 12px 0;
-      display: block;
-      text-decoration: none;
-      transition: 0.35s;
-    }
-
-    .social a:hover {
-      color: #fff;
-      transform: translateX(10px);
-      text-shadow: 0 0 10px var(--primary);
-    }
-
-    .projects a {
-      background: var(--accent);
-      padding: 14px 22px;
-      border-radius: 12px;
-      display: inline-block;
-      margin: 12px 0;
-      text-decoration: none;
-      color: #fff;
-      font-weight: bold;
-      transition: 0.35s;
-      letter-spacing: 0.5px;
-    }
-
-    .projects a:hover {
-      background: #3c8cff;
-      transform: scale(1.07);
-      box-shadow: 0 0 20px rgba(74,163,255,0.8);
-    }
-
-    footer {
-      text-align: center;
-      background: var(--bg2);
-      padding: 25px 20px;
-      font-size: 18px;
-      border-top: 1px solid #1c1c25;
-      color: var(--text);
-      margin-top: 40px;
-    }
-
-    /* Footer social icons hover effect */
-    footer .social-icons img {
-      width: 28px;
-      margin: 0 8px;
-      transition: 0.3s;
-      filter: brightness(0.7);
-    }
-    footer .social-icons img:hover {
-      filter: brightness(1);
-      transform: scale(1.2);
-      box-shadow: 0 0 12px var(--accent);
-    }
-
-    @media (max-width: 600px) {
-      h1 { font-size: 34px; }
-      nav a { display: block; margin: 15px 0; }
-    }
-  </style>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Ahmed Mohamed | Portfolio</title>
+<style>
+:root {
+  --bg: #f5f6fa;
+  --bg2: #ffffff;
+  --card: #e1e2e6;
+  --primary: #4a90e2;
+  --text: #222222;
+  --accent: #ff6b6b;
+}
+body {
+  margin: 0;
+  font-family: "Poppins", sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  scroll-behavior: smooth;
+}
+header {
+  padding: 20px;
+  text-align: center;
+  background: var(--bg2);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  border-bottom: 1px solid #d1d1d6;
+}
+nav a {
+  color: var(--primary);
+  margin: 0 22px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: 0.3s;
+  font-size: 18px;
+}
+nav a:hover {
+  color: var(--accent);
+  transform: translateY(-3px);
+}
+.visitor-counter-top {
+  position: fixed;
+  top: 12px;
+  right: 20px;
+  background: var(--card);
+  padding: 6px 12px;
+  border-radius: 8px;
+  font-size: 16px;
+  color: var(--primary);
+  border: 1px solid #d1d1d6;
+  z-index: 999;
+}
+.section {
+  padding: 90px 20px;
+  max-width: 1000px;
+  margin: auto;
+}
+.profile-img {
+  width: 210px;
+  height: 210px;
+  border-radius: 50%;
+  object-fit: cover;
+  display: block;
+  margin: 20px auto;
+  border: 4px solid var(--primary);
+  box-shadow: 0 0 25px rgba(74,144,226,0.4);
+  transition: 0.4s;
+}
+.profile-img:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 40px rgba(74,144,226,0.6);
+}
+h1 { text-align: center; font-size: 48px; margin-bottom: 5px; color: var(--primary); }
+h3 { text-align: center; font-size: 24px; color: #555; }
+.card {
+  background: var(--card);
+  padding: 28px;
+  margin: 30px 0;
+  border-radius: 14px;
+  border: 1px solid #d1d1d6;
+  transition: 0.4s;
+}
+.card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+  border-color: var(--accent);
+}
+.social a {
+  color: var(--primary);
+  font-size: 21px;
+  margin: 12px 0;
+  display: block;
+  text-decoration: none;
+  transition: 0.3s;
+}
+.social a:hover {
+  color: var(--accent);
+  transform: translateX(6px);
+}
+.projects a {
+  background: var(--primary);
+  padding: 14px 22px;
+  border-radius: 12px;
+  display: inline-block;
+  margin: 12px 0;
+  text-decoration: none;
+  color: #fff;
+  font-weight: bold;
+  transition: 0.3s;
+}
+.projects a:hover {
+  background: var(--accent);
+  transform: scale(1.07);
+  box-shadow: 0 0 12px rgba(255,107,107,0.6);
+}
+footer {
+  text-align: center;
+  background: var(--bg2);
+  padding: 25px 20px;
+  font-size: 18px;
+  border-top: 1px solid #d1d1d6;
+  color: var(--text);
+}
+footer .social-icons img {
+  width: 28px;
+  margin: 0 8px;
+  transition: 0.3s;
+  filter: brightness(0.7);
+}
+footer .social-icons img:hover {
+  filter: brightness(1);
+  transform: scale(1.2);
+  box-shadow: 0 0 12px var(--accent);
+}
+@media (max-width: 600px) {
+  h1 { font-size: 34px; }
+  nav a { display: block; margin: 15px 0; }
+}
+</style>
 </head>
-
 <body>
-  <!-- Visitor Counter Top Right -->
-  <div class="visitor-counter-top">Visitor Count: <span id="visitorCount">0</span></div>
+<div class="visitor-counter-top">Visitor Count: <span id="visitorCount">0</span></div>
 
-  <header>
-    <nav>
-      <a href="#about">About</a>
-      <a href="#contact">Contact</a>
-    </nav>
-  </header>
+<header>
+  <nav>
+    <a href="#about">About</a>
+    <a href="#contact">Contact</a>
+    <a href="#projects">Projects</a>
+  </nav>
+</header>
 
-  <section id="about" class="section">
-    <div style="display:flex; align-items:center; justify-content:center; gap:40px; flex-wrap:wrap;">
-      <img src="https://i.postimg.cc/BvMCNNfv/photo-2025-11-21-13-41-42.jpg" alt="Profile Photo" class="profile-img" style="margin:0;" />
-
-      <div style="max-width:450px;">
-        <h1 style="text-align:left;">Ahmed Mohamed</h1>
-        <h3 style="text-align:left;">Java Backend Developer</h3>
-        <p style="font-size:19px; line-height:1.7; color:#c9c9c9; margin-top:15px;">
-          Hey, I’m Ahmed — a passionate Java backend developer who loves building APIs using Spring Boot. I share what I learn to help others grow, and I’m always open to connecting with tech enthusiasts.
-        </p>
-      </div>
+<section id="about" class="section">
+  <div style="display:flex; align-items:center; justify-content:center; gap:40px; flex-wrap:wrap;">
+    <img src="https://i.postimg.cc/BvMCNNfv/photo-2025-11-21-13-41-42.jpg" alt="Profile Photo" class="profile-img" />
+    <div style="max-width:450px;">
+      <h1>Ahmed Mohamed</h1>
+      <h3>Java Backend Developer</h3>
+      <p style="font-size:19px; line-height:1.7; color:#555;">
+        Hey, I’m Ahmed — a passionate Java backend developer who loves building APIs using Spring Boot. I share what I learn to help others grow, and I’m always open to connecting with tech enthusiasts.
+      </p>
     </div>
+  </div>
+  <p style="text-align:center; font-size:20px; line-height:1.85; max-width:900px; margin:55px auto 0 auto; color:#333;">
+    Technologies and Skills: Java, Spring, Oracle, JWT, TypeScript, JavaScript, HTML, CSS, C++.
+  </p>
+</section>
 
-    <p style="text-align:center; font-size:20px; line-height:1.85; max-width:900px; margin:55px auto 0 auto; color:#d6d6d6;">
-      Technologies and Skills: Java, Spring, Oracle, JWT, TypeScript, JavaScript, HTML, CSS, C++.
-    </p>
-  </section>
+<section id="projects" class="section">
+  <h2 style="color:var(--primary); text-align:center; font-size:32px;">Projects</h2>
+  <div class="card projects" style="text-align:center;">
+    <a href="#">Vehicle System</a><br>
+    <a href="#">Restaurant Website</a><br>
+    <a href="#">Project 3</a>
+  </div>
+</section>
 
-  <section id="contact" class="section">
+<section id="contact" class="section">
+  <h2 style="color:var(--primary); text-align:center; font-size:32px;">Contact & Social</h2>
+  <div class="card social" style="text-align:center;">
+    <a href="https://www.facebook.com/share/1HjGm7okq5/"><img src="https://cdn-icons-png.flaticon.com/512/733/733547.png" style="width:22px; vertical-align:middle; margin-right:8px;"> Facebook</a>
+    <a href="https://www.linkedin.com/in/ahmedmohammed-jv/"><img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" style="width:22px; vertical-align:middle; margin-right:8px;"> LinkedIn</a>
+    <a href="https://github.com/AhmedMohamed852"><img src="https://cdn-icons-png.flaticon.com/512/733/733553.png" style="width:22px; vertical-align:middle; margin-right:8px;"> GitHub</a>
+    <p style="font-size:20px;">📞 0108478430</p>
+  </div>
+</section>
 
-    <h2 style="color:var(--primary); text-align:center; font-size:32px;">Contact & Social</h2>
+<footer>
+Ahmed Mohamed — This website was created by me. Studying at EraaSoft.<br>
+<div class="social-icons">
+  <a href="https://www.facebook.com/share/1HjGm7okq5/" target="_blank"><img src="https://cdn-icons-png.flaticon.com/512/733/733547.png"></a>
+  <a href="https://www.linkedin.com/in/ahmedmohammed-jv/" target="_blank"><img src="https://cdn-icons-png.flaticon.com/512/174/174857.png"></a>
+  <a href="https://github.com/AhmedMohamed852" target="_blank"><img src="https://cdn-icons-png.flaticon.com/512/733/733553.png"></a>
+</div>
+</footer>
 
-    <div class="card social">
-      <a href="https://www.facebook.com/share/1HjGm7okq5/"><img src="https://cdn-icons-png.flaticon.com/512/733/733547.png" style="width:22px; vertical-align:middle; margin-right:8px;"> Facebook</a>
-      <a href="https://www.linkedin.com/in/ahmedmohammed-jv/"><img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" style="width:22px; vertical-align:middle; margin-right:8px;"> LinkedIn</a>
-      <a href="https://github.com/AhmedMohamed852"><img src="https://cdn-icons-png.flaticon.com/512/733/733553.png" style="width:22px; vertical-align:middle; margin-right:8px;"> GitHub</a>
-      <p style="font-size:20px; margin-left:4px;">📞 0108478430</p>
-    </div>
-
-    <h2 style="color:var(--primary); text-align:center; font-size:32px;">Projects</h2>
-
-    <div class="card projects">
-      <a href="#">Vehicle System</a><br>
-      <a href="#">Restaurant Website</a><br>
-      <a href="#">Project 3</a>
-    </div>
-
-  </section>
-
-  <footer>
-    Ahmed Mohamed — This website was created by me. Studying at EraaSoft.<br>
-    <div class="social-icons">
-      <a href="https://www.facebook.com/share/1HjGm7okq5/" target="_blank"><img src="https://cdn-icons-png.flaticon.com/512/733/733547.png"></a>
-      <a href="https://www.linkedin.com/in/ahmedmohammed-jv/" target="_blank"><img src="https://cdn-icons-png.flaticon.com/512/174/174857.png"></a>
-      <a href="https://github.com/AhmedMohamed852" target="_blank"><img src="https://cdn-icons-png.flaticon.com/512/733/733553.png"></a>
-    </div>
-  </footer>
-
-  <script>
-    // Visitor counter top-right using localStorage
-    let count = localStorage.getItem('visitorCount');
-    if(!count){ count = 0; }
-    count = parseInt(count) + 1;
-    localStorage.setItem('visitor', count);
-    document.getElementById('visitorCount').innerText = count;
-  </script>
+<script>
+let count = localStorage.getItem('visitor');
+if(!count){ count = 0; }
+count = parseInt(count) + 1;
+localStorage.setItem('visitorCount', count);
+document.getElementById('visitorCount').innerText = count;
+</script>
 
 </body>
 </html>
