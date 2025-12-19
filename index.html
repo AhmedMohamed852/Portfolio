@@ -4,175 +4,281 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Ahmed Mohamed | Portfolio</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
 <style>
 :root {
-  --bg: #1e1e2f;
-  --bg2: #2a2a3d;
-  --card: #252539;
-  --primary: #1e90ff;
-  --accent: #1e90ff;
-  --text: #e0e0e0;
-  --subtext: #b0b0b0;
+  --bg: #0b0f1a;
+  --card-bg: #161b2a;
+  --primary: #3b82f6;
+  --accent: #60a5fa;
+  --text-main: #f8fafc;
+  --text-dim: #94a3b8;
+  --border: #1e293b;
 }
+
 body {
   margin: 0;
-  font-family: "Poppins", sans-serif;
+  font-family: 'Inter', sans-serif;
   background: var(--bg);
-  color: var(--text);
+  color: var(--text-main);
   scroll-behavior: smooth;
+  line-height: 1.6;
 }
+
+/* Glass Header */
 header {
-  padding: 20px;
-  text-align: center;
-  background: var(--bg2);
+  padding: 1rem;
+  background: rgba(11, 15, 26, 0.8);
+  backdrop-filter: blur(12px);
   position: sticky;
   top: 0;
-  z-index: 100;
-  border-bottom: 1px solid #3a3a4d;
+  z-index: 1000;
+  border-bottom: 1px solid var(--border);
 }
+
+nav {
+  max-width: 1000px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+}
+
 nav a {
-  color: var(--primary);
-  margin: 0 22px;
+  color: var(--text-dim);
   text-decoration: none;
-  font-weight: bold;
-  transition: 0.3s;
-  font-size: 18px;
+  font-weight: 500;
+  font-size: 0.95rem;
+  transition: 0.3s ease;
 }
+
 nav a:hover {
-  transform: scale(1.2) translateY(-2px);
-  color: var(--accent);
-  text-shadow: 0 0 12px var(--accent);
-}
-.visitor-counter-top {
-  position: fixed;
-  top: 12px;
-  right: 20px;
-  background: var(--card);
-  padding: 6px 12px;
-  border-radius: 8px;
-  font-size: 16px;
   color: var(--primary);
-  border: 1px solid #3a3a4d;
-  z-index: 999;
+}
+
+/* Visitor Counter */
+.v-counter {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: var(--card-bg);
+  padding: 10px 15px;
+  border-radius: 12px;
+  font-size: 13px;
+  border: 1px solid var(--border);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.3);
   display: flex;
   align-items: center;
   gap: 10px;
+  z-index: 100;
 }
+
 .reset-btn {
-  padding: 3px 10px;
-  font-size: 14px;
-  border-radius: 6px;
-  border: 1px solid var(--primary);
-  background: var(--card);
-  color: var(--primary);
+  background: #ef444422;
+  color: #ef4444;
+  border: 1px solid #ef444444;
+  padding: 2px 8px;
+  border-radius: 4px;
   cursor: pointer;
-  transition: 0.3s;
+  font-size: 11px;
 }
-.reset-btn:hover {
-  transform: scale(1.1);
+
+/* Hero Section */
+.section { padding: 80px 20px; max-width: 1000px; margin: auto; }
+
+.profile-container { text-align: center; margin-bottom: 40px; }
+
+.profile-img {
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+  border: 3px solid var(--primary);
+  padding: 5px;
+  background: var(--bg);
+  box-shadow: 0 0 30px rgba(59, 130, 246, 0.2);
+}
+
+h1 { font-size: 3rem; margin: 20px 0 10px; font-weight: 700; letter-spacing: -1px; }
+.job-title { color: var(--primary); font-size: 1.2rem; font-weight: 400; }
+
+.tech-stack {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 25px;
+}
+
+.tech-tag {
+  background: rgba(59, 130, 246, 0.1);
   color: var(--accent);
-  border-color: var(--accent);
-  text-shadow: 0 0 8px var(--accent);
+  padding: 6px 14px;
+  border-radius: 8px;
+  font-size: 13px;
+  font-weight: 500;
+  border: 1px solid rgba(59, 130, 246, 0.2);
 }
-.section { padding: 70px 20px; max-width: 1000px; margin: auto; }
-.profile-img { width: 210px; height: 210px; border-radius: 50%; object-fit: cover; display: block; margin: 0 auto; border: 4px solid var(--primary); box-shadow: 0 0 25px rgba(30,144,255,0.4); transition: 0.4s; }
-.profile-img:hover { transform: scale(1.1); box-shadow: 0 0 40px rgba(30,144,255,0.6); }
-h1 { text-align: center; font-size: 42px; margin-bottom: 5px; color: var(--primary); }
-h3 { text-align: center; font-size: 22px; color: var(--accent); margin-top:10px; }
-p { color: var(--subtext); line-height:1.7; font-size:18px; text-align:center; margin-top:15px; }
-.card { background: var(--card); padding: 28px; margin: 20px 0; border-radius: 14px; border: 1px solid #3a3a4d; transition: 0.4s; }
-.card:hover { transform: translateY(-6px); box-shadow: 0 10px 30px rgba(0,0,0,0.2); border-color: var(--accent); }
-.projects a { background: var(--primary); padding: 14px 22px; border-radius: 12px; display: inline-block; margin: 12px 0; text-decoration: none; color: #fff; font-weight: bold; transition: 0.3s; }
-.projects a:hover { transform: scale(1.07); box-shadow: 0 0 20px rgba(30,144,255,0.6); }
-/* Contact links glowing effect */
-.contact-link {
-  display: inline-block;
+
+/* Projects Grid */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+  margin-top: 30px;
+}
+
+.project-card {
+  background: var(--card-bg);
+  padding: 25px;
+  border-radius: 16px;
+  border: 1px solid var(--border);
   transition: 0.3s;
-  color: var(--primary);
   text-decoration: none;
-  cursor: pointer;
+  display: block;
 }
-.contact-link:hover {
-  transform: scale(1.2);
-  color: #1effff;
-  text-shadow: 0 0 10px #1effff, 0 0 20px #1effff;
+
+.project-card:hover {
+  transform: translateY(-8px);
+  border-color: var(--primary);
+  box-shadow: 0 15px 30px rgba(0,0,0,0.4);
 }
-.contact-link img { vertical-align: middle; }
-/* Footer */
-footer { text-align: center; background: var(--bg2); padding: 35px 20px; font-size: 20px; line-height:1.6; border-top: 1px solid #3a3a4d; color: var(--text); font-weight:bold; transition:0.3s; }
-footer:hover { color: var(--accent); text-shadow:0 0 10px var(--accent); }
-footer .social-icons img { width: 28px; margin: 0 8px; transition: 0.3s; filter: brightness(0.7); }
-footer .social-icons img:hover { filter: brightness(1); transform: scale(1.2); box-shadow: 0 0 12px var(--accent); }
-@media (max-width: 700px) { .about-flex { flex-direction: column; text-align:center; } }
+
+.project-card h4 { margin: 0 0 10px; color: var(--text-main); font-size: 1.2rem; }
+.project-card p { color: var(--text-dim); font-size: 0.9rem; margin-bottom: 15px; }
+.view-btn { color: var(--primary); font-size: 0.85rem; font-weight: 600; text-transform: uppercase; }
+
+/* Contact Section */
+.contact-container {
+  background: linear-gradient(145deg, #161b2a, #0b0f1a);
+  border-radius: 20px;
+  padding: 40px;
+  text-align: center;
+  border: 1px solid var(--border);
+}
+
+.social-links {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 20px;
+  flex-wrap: wrap;
+}
+
+.social-links a {
+  color: var(--text-main);
+  text-decoration: none;
+  font-size: 0.9rem;
+  padding: 10px 20px;
+  border-radius: 10px;
+  background: rgba(255,255,255,0.03);
+  border: 1px solid var(--border);
+  transition: 0.3s;
+}
+
+.social-links a:hover {
+  background: var(--primary);
+  border-color: var(--primary);
+  color: white;
+}
+
+footer {
+  text-align: center;
+  padding: 40px;
+  color: var(--text-dim);
+  font-size: 0.85rem;
+  border-top: 1px solid var(--border);
+}
+
+@media (max-width: 600px) {
+  h1 { font-size: 2.2rem; }
+  .grid { grid-template-columns: 1fr; }
+}
 </style>
 </head>
 <body>
 
-<div class="visitor-counter-top">
-  Visitor Count: <span id="visitorCount">0</span>
+<div class="v-counter">
+  Visits: <span id="visitorCount">0</span>
   <button class="reset-btn" onclick="resetVisitorCount()">Reset</button>
 </div>
 
 <header>
   <nav>
     <a href="#about">About</a>
-    <a href="#contact">Contact</a>
     <a href="#projects">Projects</a>
+    <a href="#contact">Contact</a>
   </nav>
 </header>
 
 <section id="about" class="section">
-  <div class="about-flex" style="display:flex; align-items:center; justify-content:center; gap:40px; flex-wrap:wrap;">
-    <img src="https://i.postimg.cc/BvMCNNfv/photo-2025-11-21-13-41-42.jpg" alt="Profile Photo" class="profile-img" />
-  </div>
-  <h1>Ahmed Mohamed</h1>
-  <h3>Backend Java Developer</h3>
-  <p style="color:#ffffff; font-size:19px; line-height:1.8; max-width:850px; margin:20px auto 0 auto; text-align:center;">
-    Hey, I’m Ahmed — a passionate Java backend developer who loves building APIs using Spring Boot. I share what I learn to help others grow, and I’m always open to connecting with tech enthusiasts.
-  </p>
-  <p style="color:#b0b0b0; font-size:18px; text-align:center; margin-top:10px;">
-    <strong>Technologies and Skills:</strong> Java, Spring, Oracle, JWT, TypeScript, JavaScript, HTML, CSS, C++.
-  </p>
-</section>
-
-<section id="contact" class="section">
-  <h2 style="color:var(--primary); text-align:center; font-size:32px;">Contact & Social</h2>
-  <div class="card social" style="text-align:center;">
-    <a href="https://www.facebook.com/share/1HjGm7okq5/" class="contact-link">
-      <img src="https://cdn-icons-png.flaticon.com/512/733/733547.png" style="width:22px; vertical-align:middle; margin-right:8px;"> Facebook
-    </a>
-    <a href="https://www.linkedin.com/in/ahmedmohammed-jv/" class="contact-link">
-      <img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" style="width:22px; vertical-align:middle; margin-right:8px;"> LinkedIn
-    </a>
-    <a href="https://github.com/AhmedMohamed852" class="contact-link">
-      <img src="https://cdn-icons-png.flaticon.com/512/733/733553.png" style="width:22px; vertical-align:middle; margin-right:8px;"> GitHub
-    </a>
-    <p class="contact-link" style="font-size:20px; margin:8px 0;">📱 0108478430</p>
-    <p class="contact-link" style="font-size:20px; margin:8px 0;">📧 e01018478430@gmail.com</p>
+  <div class="profile-container">
+    <img src="https://i.postimg.cc/BvMCNNfv/photo-2025-11-21-13-41-42.jpg" alt="Ahmed Mohamed" class="profile-img" />
+    <h1>Ahmed Mohamed</h1>
+    <div class="job-title">Backend Java Developer</div>
+    <p style="max-width: 650px; margin: 20px auto; color: var(--text-dim);">
+      I build scalable, efficient server-side applications with a focus on clean architecture. 
+      Currently refining my skills in Java Spring ecosystem at EraaSoft.
+    </p>
+    <div class="tech-stack">
+      <span class="tech-tag">Java</span>
+      <span class="tech-tag">Spring Boot</span>
+      <span class="tech-tag">OracleDB</span>
+      <span class="tech-tag">JWT Security</span>
+      <span class="tech-tag">REST API</span>
+      <span class="tech-tag">C++</span>
+      <span class="tech-tag">JavaScript</span>
+    </div>
   </div>
 </section>
 
 <section id="projects" class="section">
-  <h2 style="color:var(--primary); text-align:center; font-size:32px;">Projects</h2>
-  <div class="card projects" style="text-align:center;">
-    <a href="#">Vehicle System</a><br>
-    <a href="#">Restaurant Website</a><br>
-    <a href="#">Project 3</a>
+  <h2 style="text-align:center; margin-bottom: 40px;">Featured Work</h2>
+  <div class="grid">
+    <a href="https://github.com/AhmedMohamed852/restaurant-management-system" target="_blank" class="project-card">
+      <h4>🍴 Restaurant System</h4>
+      <p>A comprehensive backend solution for managing restaurant operations, orders, and menu workflows using Spring Boot.</p>
+      <span class="view-btn">View on GitHub →</span>
+    </a>
+
+    <a href="#" class="project-card">
+      <h4>🚗 Vehicle Management</h4>
+      <p>Enterprise-level system designed to track vehicle data, maintenance schedules, and performance metrics.</p>
+      <span class="view-btn">View Project →</span>
+    </a>
+
+    <a href="#" class="project-card">
+      <h4>🔐 Security Auth Module</h4>
+      <p>Custom authentication and authorization module using JWT and Spring Security for secure API access.</p>
+      <span class="view-btn">View Project →</span>
+    </a>
+  </div>
+</section>
+
+<section id="contact" class="section">
+  <div class="contact-container">
+    <h2>Let's Connect</h2>
+    <p style="color: var(--text-dim);">Open for collaborations and backend opportunities.</p>
+    
+    <div class="social-links">
+      <a href="https://www.linkedin.com/in/ahmedmohammed-jv/" target="_blank">LinkedIn</a>
+      <a href="https://github.com/AhmedMohamed852" target="_blank">GitHub</a>
+      <a href="https://www.facebook.com/share/1HjGm7okq5/" target="_blank">Facebook</a>
+    </div>
+
+    <div style="margin-top: 30px; font-size: 0.95rem;">
+      <span style="margin-right: 20px;">📧 e01018478430@gmail.com</span>
+      <span>📱 01018478430</span>
+    </div>
   </div>
 </section>
 
 <footer>
-Ahmed Mohamed — This website was created by me. Studying at EraaSoft.<br><br>
-<div class="social-icons">
-  <a href="https://www.facebook.com/share/1HjGm7okq5/" target="_blank"><img src="https://cdn-icons-png.flaticon.com/512/733/733547.png"></a>
-  <a href="https://www.linkedin.com/in/ahmedmohammed-jv/" target="_blank"><img src="https://cdn-icons-png.flaticon.com/512/174/174857.png"></a>
-  <a href="https://github.com/AhmedMohamed852" target="_blank"><img src="https://cdn-icons-png.flaticon.com/512/733/733553.png"></a>
-</div>
+  <p>© 2025 Ahmed Mohamed. Designed & Built by me.</p>
 </footer>
 
 <script>
-let count = localStorage.getItem('visitorCount');
-if(!count){ count = 0; }
+// Local Storage Visitor Counter
+let count = localStorage.getItem('visitorCount') || 0;
 count = parseInt(count) + 1;
 localStorage.setItem('visitorCount', count);
 document.getElementById('visitorCount').innerText = count;
@@ -184,5 +290,7 @@ function resetVisitorCount(){
   }
 }
 </script>
+
 </body>
-</html>
+  </html>
+                       
