@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Ahmed Mohamed — Backend Engineer</title>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-<style>
+<!-- saved from url=(0044)https://ahmedmohamed852.github.io/Portfolio/ -->
+<html lang="en" data--h-bstatus="0OBSERVED"><head data--h-bstatus="0OBSERVED"><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0" data--h-bstatus="0OBSERVED">
+<title data--h-bstatus="0OBSERVED">Ahmed Mohamed — Backend Engineer</title>
+<link href="./Ahmed Mohamed — Backend Engineer_files/css2" rel="stylesheet" data--h-bstatus="0OBSERVED">
+<link rel="stylesheet" href="./Ahmed Mohamed — Backend Engineer_files/all.min.css" data--h-bstatus="0OBSERVED">
+<style data--h-bstatus="0OBSERVED">
 :root{
   --bg:   #080c0f;
   --card: #0e1419;
@@ -397,232 +397,283 @@ footer{position:relative;z-index:1;text-align:center;padding:2rem 0 3rem;display
   .card{padding:1.4rem;}
   .qnav{grid-template-columns:repeat(2,1fr);}
 }
-</style>
-</head>
-<body>
+</style><style id="hb-stylesheet" data--h-bstatus="0OBSERVED">
+    img.hb-blur, video.hb-blur {
+      filter: blur(25px) grayscale(100%) !important;
+      transition: filter 0.1s ease !important;
+      opacity: unset !important;
+    }
+  
+	.hb-blur-temp {
+		animation: hb-blur-temp 20000ms ease-in-out forwards !important;
+	}
+	.hb-hide-temp {
+		animation: hb-hide-temp 6000ms ease-in-out forwards !important;
+	}
 
-<div id="prog"></div>
-<canvas id="canvas"></canvas>
-<div id="vcounter">👁 Visits: <span id="vnum">0</span></div>
-<button id="btt" onclick="window.scrollTo({top:0,left:0,behavior:'smooth'})"><i class="fas fa-chevron-up"></i></button>
+	#hb-in-canvas {
+		display: none !important;
+		visibility: hidden !important;
+	}
+
+	@keyframes hb-hide-temp {
+        0% { visibility: hidden;}
+		95% { visibility: hidden; }
+		100% { visibility: visible;}
+	}
+
+	@keyframes hb-blur-temp {
+        0% { visibility: hidden;}
+		28% { visibility: hidden; }
+		30% { visibility: visible; filter: blur(25px) grayscale(100%); }
+        95% { filter: blur(25px) grayscale(100%); }
+        100% { visibility:visible; filter: unset}
+	}
+
+    .hb-wrapper {
+        position: absolute;
+        pointer-events: none;
+    }
+
+	.hb-rect {
+		will-change: width, height, top, left, right, bottom, transform, opacity;
+		transition: all 0.3s ease;
+		position: absolute;
+		border-radius: 5px;
+		background: rgba(255, 255, 255, 0.2);
+		box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+		backdrop-filter: blur(25px) grayscale(100%);
+        -webkit-backdrop-filter: blur(25px) grayscale(100%);
+        pointer-events: none;
+	}
+  </style>
+</head>
+<body data--h-bstatus="0OBSERVED">
+
+<div id="prog" style="width: 0%;" data--h-bstatus="0OBSERVED"></div>
+<canvas id="canvas" width="1536" height="747" data--h-bstatus="0OBSERVED"></canvas>
+<div id="vcounter" data--h-bstatus="0OBSERVED">👁 Visits: <span id="vnum" data--h-bstatus="0OBSERVED">3</span></div>
+<button id="btt" onclick="window.scrollTo({top:0,left:0,behavior:&#39;smooth&#39;})" class="" data--h-bstatus="0OBSERVED"><i class="fas fa-chevron-up" data--h-bstatus="0OBSERVED"></i></button>
 
 <!-- Mobile floating avatar (shown on small screens when hero avatar scrolls out) -->
-<div id="nav-float-av-mobile" title="Back to top" onclick="window.scrollTo({top:0,left:0,behavior:'smooth'})">
-  <img src="https://i.postimg.cc/pVYXsNRX/photo-2026-04-24-10-41-42.jpg" alt="Ahmed Mohamed"
-    onerror="this.onerror=null;this.src='https://ui-avatars.com/api/?name=Ahmed+Mohamed&background=00d4c8&color=000&size=80'">
+<div id="nav-float-av-mobile" title="Back to top" onclick="window.scrollTo({top:0,left:0,behavior:&#39;smooth&#39;})" class="" data--h-bstatus="0OBSERVED">
+  <img src="./Ahmed Mohamed — Backend Engineer_files/photo-2026-04-24-10-41-42.jpg" alt="Ahmed Mohamed" onerror="this.onerror=null;this.src=&#39;https://ui-avatars.com/api/?name=Ahmed+Mohamed&amp;background=00d4c8&amp;color=000&amp;size=80&#39;" data--h-bstatus="5PROCESSED" class="" data--h-bfrom-bx="true" data--h-bresult="clear">
 </div>
 
 <!-- Floating avatar tooltip -->
-<div id="av-tip">مرحباً! أنا <span>Ahmed</span> 👋</div>
+<div id="av-tip" class="" data--h-bstatus="0OBSERVED">مرحباً! أنا <span data--h-bstatus="0OBSERVED">Ahmed</span> 👋</div>
 
 <!-- NAV -->
-<nav>
-  <div class="nav-logo">AM.</div>
-  <ul class="nav-links">
-    <li><a href="#about">About</a></li>
-    <li><a href="#skills">Skills</a></li>
-    <li><a href="#journey">Journey</a></li>
-    <li><a href="#projects">Projects</a></li>
-    <li><a href="https://www.linkedin.com/in/ahmed-mohamed852" target="_blank"><i class="fab fa-linkedin"></i></a></li>
-    <li>
+<nav data--h-bstatus="0OBSERVED">
+  <div class="nav-logo" data--h-bstatus="0OBSERVED">AM.</div>
+  <ul class="nav-links" data--h-bstatus="0OBSERVED">
+    <li data--h-bstatus="0OBSERVED"><a href="https://ahmedmohamed852.github.io/Portfolio/#about" data--h-bstatus="0OBSERVED">About</a></li>
+    <li data--h-bstatus="0OBSERVED"><a href="https://ahmedmohamed852.github.io/Portfolio/#skills" data--h-bstatus="0OBSERVED">Skills</a></li>
+    <li data--h-bstatus="0OBSERVED"><a href="https://ahmedmohamed852.github.io/Portfolio/#journey" data--h-bstatus="0OBSERVED">Journey</a></li>
+    <li data--h-bstatus="0OBSERVED"><a href="https://ahmedmohamed852.github.io/Portfolio/#projects" data--h-bstatus="0OBSERVED">Projects</a></li>
+    <li data--h-bstatus="0OBSERVED"><a href="https://www.linkedin.com/in/ahmed-mohamed852" target="_blank" data--h-bstatus="0OBSERVED"><i class="fab fa-linkedin" data--h-bstatus="0OBSERVED"></i></a></li>
+    <li data--h-bstatus="0OBSERVED">
       <!-- Floating avatar lives here inside nav -->
-      <div id="nav-float-av" title="Ahmed Mohamed" onclick="scrollTo({top:0,behavior:'smooth'})">
-        <img src="https://i.postimg.cc/pVYXsNRX/photo-2026-04-24-10-41-42.jpg" alt="Ahmed Mohamed"
-          onerror="this.onerror=null;this.src='https://ui-avatars.com/api/?name=Ahmed+Mohamed&background=00d4c8&color=000&size=80'">
+      <div id="nav-float-av" title="Ahmed Mohamed" onclick="scrollTo({top:0,behavior:&#39;smooth&#39;})" class="" data--h-bstatus="0OBSERVED">
+        <img src="./Ahmed Mohamed — Backend Engineer_files/photo-2026-04-24-10-41-42.jpg" alt="Ahmed Mohamed" onerror="this.onerror=null;this.src=&#39;https://ui-avatars.com/api/?name=Ahmed+Mohamed&amp;background=00d4c8&amp;color=000&amp;size=80&#39;" data--h-bstatus="5PROCESSED" class="" data--h-bfrom-bx="true" data--h-bresult="clear">
       </div>
     </li>
-    <li><a href="#contact" class="nav-cta">Contact</a></li>
+    <li data--h-bstatus="0OBSERVED"><a href="https://ahmedmohamed852.github.io/Portfolio/#contact" class="nav-cta" data--h-bstatus="0OBSERVED">Contact</a></li>
   </ul>
 </nav>
 
-<main>
+<main data--h-bstatus="0OBSERVED">
 
   <!-- HERO -->
-  <section class="card hero" id="hero">
-    <div class="hero-badges">
-      <div class="badge"><span class="badge-dot"></span> Available for Opportunities</div>
-      <div class="badge badge-monitor"><i class="fas fa-star"></i> Monitor — Java Track · EraaSoft</div>
+  <section class="card hero" id="hero" data--h-bstatus="0OBSERVED">
+    <div class="hero-badges" data--h-bstatus="0OBSERVED">
+      <div class="badge" data--h-bstatus="0OBSERVED"><span class="badge-dot" data--h-bstatus="0OBSERVED"></span> Available for Opportunities</div>
+      <div class="badge badge-monitor" data--h-bstatus="0OBSERVED"><i class="fas fa-star" data--h-bstatus="0OBSERVED"></i> Monitor — Java Track · EraaSoft</div>
     </div>
     <!-- The big avatar we observe -->
-    <div class="av" id="hero-av">
-      <img src="https://i.postimg.cc/pVYXsNRX/photo-2026-04-24-10-41-42.jpg" alt="Ahmed Mohamed"
-        onerror="this.onerror=null;this.src='https://ui-avatars.com/api/?name=Ahmed+Mohamed&background=00d4c8&color=000&size=200'">
+    <div class="av" id="hero-av" data--h-bstatus="0OBSERVED">
+      <img src="./Ahmed Mohamed — Backend Engineer_files/photo-2026-04-24-10-41-42.jpg" alt="Ahmed Mohamed" onerror="this.onerror=null;this.src=&#39;https://ui-avatars.com/api/?name=Ahmed+Mohamed&amp;background=00d4c8&amp;color=000&amp;size=200&#39;" data--h-bstatus="5PROCESSED" class="" data--h-bfrom-bx="true" data--h-bresult="clear">
     </div>
-    <h1>Ahmed Mohamed</h1>
-    <div class="hero-role"><span id="typed"></span><span id="cursor"></span></div>
-    <p class="hero-bio">A dedicated backend developer specializing in the Java &amp; Spring Boot ecosystem. Focused on building scalable APIs, secure authentication systems, and clean architecture — currently sharpening enterprise-level skills at EraaSoft.</p>
-    <div class="hero-btns">
-      <a href="#projects" class="hbtn hbtn-primary"><i class="fas fa-folder-open"></i> View My Work</a>
-      <a href="https://drive.google.com/file/d/1pTNCFAJ5db6E32aLOz0HRD2MjtFQfWGq/view?usp=sharing" target="_blank" class="hbtn hbtn-outline"><i class="fas fa-download"></i> Download CV</a>
-      <a href="#contact" class="hbtn hbtn-outline"><i class="fas fa-paper-plane"></i> Get In Touch</a>
+    <h1 data--h-bstatus="0OBSERVED">Ahmed Mohamed</h1>
+    <div class="hero-role" data--h-bstatus="0OBSERVED"><span id="typed" data--h-bstatus="0OBSERVED">Backend Engineer · Java &amp; Spring Boot</span><span id="cursor" data--h-bstatus="0OBSERVED"></span></div>
+    <p class="hero-bio" data--h-bstatus="0OBSERVED">A dedicated backend developer specializing in the Java &amp; Spring Boot ecosystem. Focused on building scalable APIs, secure authentication systems, and clean architecture — currently sharpening enterprise-level skills at EraaSoft.</p>
+    <div class="hero-btns" data--h-bstatus="0OBSERVED">
+      <a href="https://ahmedmohamed852.github.io/Portfolio/#projects" class="hbtn hbtn-primary" data--h-bstatus="0OBSERVED"><i class="fas fa-folder-open" data--h-bstatus="0OBSERVED"></i> View My Work</a>
+      <a href="https://drive.google.com/file/d/1pTNCFAJ5db6E32aLOz0HRD2MjtFQfWGq/view?usp=sharing" target="_blank" class="hbtn hbtn-outline" data--h-bstatus="0OBSERVED"><i class="fas fa-download" data--h-bstatus="0OBSERVED"></i> Download CV</a>
+      <a href="https://ahmedmohamed852.github.io/Portfolio/#contact" class="hbtn hbtn-outline" data--h-bstatus="0OBSERVED"><i class="fas fa-paper-plane" data--h-bstatus="0OBSERVED"></i> Get In Touch</a>
     </div>
-    <div class="stats">
-      <div class="stat"><div class="stat-n">2+</div><div class="stat-l">Projects</div></div>
-      <div class="stat"><div class="stat-n">10+</div><div class="stat-l">Skills</div></div>
-      <div class="stat"><div class="stat-n">2nd</div><div class="stat-l">Yr. CS</div></div>
+    <div class="stats" data--h-bstatus="0OBSERVED">
+      <div class="stat" data--h-bstatus="0OBSERVED"><div class="stat-n" data--h-bstatus="0OBSERVED">2+</div><div class="stat-l" data--h-bstatus="0OBSERVED">Projects</div></div>
+      <div class="stat" data--h-bstatus="0OBSERVED"><div class="stat-n" data--h-bstatus="0OBSERVED">10+</div><div class="stat-l" data--h-bstatus="0OBSERVED">Skills</div></div>
+      <div class="stat" data--h-bstatus="0OBSERVED"><div class="stat-n" data--h-bstatus="0OBSERVED">2nd</div><div class="stat-l" data--h-bstatus="0OBSERVED">Yr. CS</div></div>
     </div>
   </section>
 
   <!-- QUICK NAV -->
-  <section class="card" style="padding:1.6rem;">
-    <div class="sec-label">Navigate</div>
-    <div class="qnav">
-      <a href="#about"    class="qbtn"><i class="fas fa-user"></i>About Me</a>
-      <a href="#skills"   class="qbtn"><i class="fas fa-code"></i>Skills</a>
-      <a href="#journey"  class="qbtn"><i class="fas fa-road"></i>Journey</a>
-      <a href="#projects" class="qbtn"><i class="fas fa-folder-open"></i>Projects</a>
-      <a href="#certs"    class="qbtn"><i class="fas fa-certificate"></i>Certifications</a>
-      <a href="https://www.linkedin.com/in/ahmed-mohamed852" target="_blank" class="qbtn"><i class="fab fa-linkedin"></i>LinkedIn</a>
-      <a href="https://drive.google.com/file/d/1pTNCFAJ5db6E32aLOz0HRD2MjtFQfWGq/view?usp=sharing" target="_blank" class="qbtn"><i class="fas fa-file-pdf"></i>Download CV</a>
-      <a href="#contact"  class="qbtn"><i class="fas fa-envelope"></i>Contact Me</a>
+  <section class="card" style="padding:1.6rem;" data--h-bstatus="0OBSERVED">
+    <div class="sec-label" data--h-bstatus="0OBSERVED">Navigate</div>
+    <div class="qnav" data--h-bstatus="0OBSERVED">
+      <a href="https://ahmedmohamed852.github.io/Portfolio/#about" class="qbtn" data--h-bstatus="0OBSERVED"><i class="fas fa-user" data--h-bstatus="0OBSERVED"></i>About Me</a>
+      <a href="https://ahmedmohamed852.github.io/Portfolio/#skills" class="qbtn" data--h-bstatus="0OBSERVED"><i class="fas fa-code" data--h-bstatus="0OBSERVED"></i>Skills</a>
+      <a href="https://ahmedmohamed852.github.io/Portfolio/#journey" class="qbtn" data--h-bstatus="0OBSERVED"><i class="fas fa-road" data--h-bstatus="0OBSERVED"></i>Journey</a>
+      <a href="https://ahmedmohamed852.github.io/Portfolio/#projects" class="qbtn" data--h-bstatus="0OBSERVED"><i class="fas fa-folder-open" data--h-bstatus="0OBSERVED"></i>Projects</a>
+      <a href="https://ahmedmohamed852.github.io/Portfolio/#certs" class="qbtn" data--h-bstatus="0OBSERVED"><i class="fas fa-certificate" data--h-bstatus="0OBSERVED"></i>Certifications</a>
+      <a href="https://www.linkedin.com/in/ahmed-mohamed852" target="_blank" class="qbtn" data--h-bstatus="0OBSERVED"><i class="fab fa-linkedin" data--h-bstatus="0OBSERVED"></i>LinkedIn</a>
+      <a href="https://drive.google.com/file/d/1pTNCFAJ5db6E32aLOz0HRD2MjtFQfWGq/view?usp=sharing" target="_blank" class="qbtn" data--h-bstatus="0OBSERVED"><i class="fas fa-file-pdf" data--h-bstatus="0OBSERVED"></i>Download CV</a>
+      <a href="https://ahmedmohamed852.github.io/Portfolio/#contact" class="qbtn" data--h-bstatus="0OBSERVED"><i class="fas fa-envelope" data--h-bstatus="0OBSERVED"></i>Contact Me</a>
     </div>
   </section>
 
   <!-- ABOUT -->
-  <section class="card" id="about">
-    <div class="sec-label">Who I Am</div>
-    <h2>About Me</h2>
-    <p class="bio">I'm a passionate backend developer based in <strong>New Cairo, Egypt</strong>, currently in my 2nd year studying Information Systems at Cairo Higher Institute. My journey in software development started with a strong foundation in Computer Science fundamentals and has grown into hands-on experience building real-world backend systems.</p>
-    <p class="bio" style="margin-bottom:1.25rem;">At <strong>EraaSoft</strong>, I'm undergoing an intensive 6-month Java &amp; Spring Boot track where I work on enterprise-level projects — from authentication systems with JWT to optimized database architectures. I also serve as <strong>Monitor</strong> for the Java track, supporting peers and coordinating sessions.</p>
-    <div class="info-grid">
-      <div class="iitem"><i class="fas fa-graduation-cap"></i><div><p>Information Systems — 2nd Year</p><span>Cairo Higher Institute, New Cairo</span></div></div>
-      <div class="iitem"><i class="fas fa-laptop-code"></i><div><p>Java Spring Boot Track</p><span>EraaSoft — 6-Month Intensive · Enrolled</span></div></div>
-      <div class="iitem"><i class="fas fa-star"></i><div><p>Monitor — Java Track</p><span>EraaSoft · Supporting peers &amp; sessions</span></div></div>
-      <div class="iitem"><i class="fas fa-map-marker-alt"></i><div><p>New Cairo, Egypt</p><span>Open to Remote &amp; On-site Roles</span></div></div>
+  <section class="card" id="about" data--h-bstatus="0OBSERVED">
+    <div class="sec-label" data--h-bstatus="0OBSERVED">Who I Am</div>
+    <h2 data--h-bstatus="0OBSERVED">About Me</h2>
+    <p class="bio" data--h-bstatus="0OBSERVED">I'm a passionate backend developer based in <strong data--h-bstatus="0OBSERVED">New Cairo, Egypt</strong>, currently in my 2nd year studying Information Systems at Cairo Higher Institute. My journey in software development started with a strong foundation in Computer Science fundamentals and has grown into hands-on experience building real-world backend systems.</p>
+    <p class="bio" style="margin-bottom:1.25rem;" data--h-bstatus="0OBSERVED">At <strong data--h-bstatus="0OBSERVED">EraaSoft</strong>, I'm undergoing an intensive 6-month Java &amp; Spring Boot track where I work on enterprise-level projects — from authentication systems with JWT to optimized database architectures. I also serve as <strong data--h-bstatus="0OBSERVED">Monitor</strong> for the Java track, supporting peers and coordinating sessions.</p>
+    <div class="info-grid" data--h-bstatus="0OBSERVED">
+      <div class="iitem" data--h-bstatus="0OBSERVED"><i class="fas fa-graduation-cap" data--h-bstatus="0OBSERVED"></i><div data--h-bstatus="0OBSERVED"><p data--h-bstatus="0OBSERVED">Information Systems — 2nd Year</p><span data--h-bstatus="0OBSERVED">Cairo Higher Institute, New Cairo</span></div></div>
+      <div class="iitem" data--h-bstatus="0OBSERVED"><i class="fas fa-laptop-code" data--h-bstatus="0OBSERVED"></i><div data--h-bstatus="0OBSERVED"><p data--h-bstatus="0OBSERVED">Java Spring Boot Track</p><span data--h-bstatus="0OBSERVED">EraaSoft — 6-Month Intensive · Enrolled</span></div></div>
+      <div class="iitem" data--h-bstatus="0OBSERVED"><i class="fas fa-star" data--h-bstatus="0OBSERVED"></i><div data--h-bstatus="0OBSERVED"><p data--h-bstatus="0OBSERVED">Monitor — Java Track</p><span data--h-bstatus="0OBSERVED">EraaSoft · Supporting peers &amp; sessions</span></div></div>
+      <div class="iitem" data--h-bstatus="0OBSERVED"><i class="fas fa-map-marker-alt" data--h-bstatus="0OBSERVED"></i><div data--h-bstatus="0OBSERVED"><p data--h-bstatus="0OBSERVED">New Cairo, Egypt</p><span data--h-bstatus="0OBSERVED">Open to Remote &amp; On-site Roles</span></div></div>
     </div>
   </section>
 
   <!-- SKILLS -->
-  <section class="card" id="skills">
-    <div class="sec-label">What I Use</div>
-    <h2>Technical Skills</h2>
-    <div class="skills">
-      <span class="stag"><i class="fab fa-java"></i> Java SE / EE</span>
-      <span class="stag"><i class="fas fa-leaf"></i> Spring Boot</span>
-      <span class="stag"><i class="fas fa-shield-alt"></i> Spring Security &amp; JWT</span>
-      <span class="stag"><i class="fas fa-database"></i> Oracle &amp; MySQL</span>
-      <span class="stag"><i class="fas fa-plug"></i> REST API Design</span>
-      <span class="stag"><i class="fas fa-layer-group"></i> Clean Architecture</span>
-      <span class="stag"><i class="fas fa-sitemap"></i> Data Structures &amp; OOP</span>
-      <span class="stag"><i class="fas fa-vial"></i> Unit Testing</span>
-      <span class="stag"><i class="fab fa-git-alt"></i> Git &amp; Version Control</span>
-      <span class="stag"><i class="fas fa-code"></i> C++</span>
+  <section class="card" id="skills" data--h-bstatus="0OBSERVED">
+    <div class="sec-label" data--h-bstatus="0OBSERVED">What I Use</div>
+    <h2 data--h-bstatus="0OBSERVED">Technical Skills</h2>
+    <div class="skills" data--h-bstatus="0OBSERVED">
+      <span class="stag" data--h-bstatus="0OBSERVED"><i class="fab fa-java" data--h-bstatus="0OBSERVED"></i> Java SE / EE</span>
+      <span class="stag" data--h-bstatus="0OBSERVED"><i class="fas fa-leaf" data--h-bstatus="0OBSERVED"></i> Spring Boot</span>
+      <span class="stag" data--h-bstatus="0OBSERVED"><i class="fas fa-shield-alt" data--h-bstatus="0OBSERVED"></i> Spring Security &amp; JWT</span>
+      <span class="stag" data--h-bstatus="0OBSERVED"><i class="fas fa-database" data--h-bstatus="0OBSERVED"></i> Oracle &amp; MySQL</span>
+      <span class="stag" data--h-bstatus="0OBSERVED"><i class="fas fa-plug" data--h-bstatus="0OBSERVED"></i> REST API Design</span>
+      <span class="stag" data--h-bstatus="0OBSERVED"><i class="fas fa-layer-group" data--h-bstatus="0OBSERVED"></i> Clean Architecture</span>
+      <span class="stag" data--h-bstatus="0OBSERVED"><i class="fas fa-sitemap" data--h-bstatus="0OBSERVED"></i> Data Structures &amp; OOP</span>
+      <span class="stag" data--h-bstatus="0OBSERVED"><i class="fas fa-vial" data--h-bstatus="0OBSERVED"></i> Unit Testing</span>
+      <span class="stag" data--h-bstatus="0OBSERVED"><i class="fab fa-git-alt" data--h-bstatus="0OBSERVED"></i> Git &amp; Version Control</span>
+      <span class="stag" data--h-bstatus="0OBSERVED"><i class="fas fa-code" data--h-bstatus="0OBSERVED"></i> C++</span>
     </div>
   </section>
 
   <!-- JOURNEY -->
-  <section class="card" id="journey">
-    <div class="sec-label">My Path</div>
-    <h2>Career Journey</h2>
-    <div class="tline">
-      <div class="tl">
-        <div class="tldot on"></div>
-        <span class="tpill on-p">Current</span>
-        <div class="tl-title">Java Spring Boot Backend Track</div>
-        <div class="tl-sub">EraaSoft — 6-Month Intensive Program</div>
-        <p class="tl-desc">Advanced specialization in enterprise-level backend development. Working on complex projects including authentication modules, JWT-secured endpoints, database optimization with Spring Data JPA, and scalable service architectures following clean code principles.</p>
+  <section class="card" id="journey" data--h-bstatus="0OBSERVED">
+    <div class="sec-label" data--h-bstatus="0OBSERVED">My Path</div>
+    <h2 data--h-bstatus="0OBSERVED">Career Journey</h2>
+    <div class="tline" data--h-bstatus="0OBSERVED">
+      <div class="tl" data--h-bstatus="0OBSERVED">
+        <div class="tldot on" data--h-bstatus="0OBSERVED"></div>
+        <span class="tpill on-p" data--h-bstatus="0OBSERVED">Current</span>
+        <div class="tl-title" data--h-bstatus="0OBSERVED">Java Spring Boot Backend Track</div>
+        <div class="tl-sub" data--h-bstatus="0OBSERVED">EraaSoft — 6-Month Intensive Program</div>
+        <p class="tl-desc" data--h-bstatus="0OBSERVED">Advanced specialization in enterprise-level backend development. Working on complex projects including authentication modules, JWT-secured endpoints, database optimization with Spring Data JPA, and scalable service architectures following clean code principles.</p>
       </div>
-      <div class="tl">
-        <div class="tldot on"></div>
-        <span class="tpill on-p">Current</span>
-        <div class="tl-title">Monitor — Java Track</div>
-        <div class="tl-sub">EraaSoft</div>
-        <p class="tl-desc">Serving as Monitor for the Java track at EraaSoft — responsible for supporting peers, coordinating sessions, and helping maintain a productive learning environment within the program.</p>
+      <div class="tl" data--h-bstatus="0OBSERVED">
+        <div class="tldot on" data--h-bstatus="0OBSERVED"></div>
+        <span class="tpill on-p" data--h-bstatus="0OBSERVED">Current</span>
+        <div class="tl-title" data--h-bstatus="0OBSERVED">Monitor — Java Track</div>
+        <div class="tl-sub" data--h-bstatus="0OBSERVED">EraaSoft</div>
+        <p class="tl-desc" data--h-bstatus="0OBSERVED">Serving as Monitor for the Java track at EraaSoft — responsible for supporting peers, coordinating sessions, and helping maintain a productive learning environment within the program.</p>
       </div>
-      <div class="tl">
-        <div class="tldot off"></div>
-        <span class="tpill off-p">Completed</span>
-        <div class="tl-title">CS8 Basics Diploma</div>
-        <div class="tl-sub">EraaSoft — 4 Months</div>
-        <p class="tl-desc">Foundation course covering core Computer Science concepts, Algorithms, Logic Building, and Java fundamentals. Established a strong problem-solving mindset and programming foundations, culminating in an official certification.</p>
+      <div class="tl" data--h-bstatus="0OBSERVED">
+        <div class="tldot off" data--h-bstatus="0OBSERVED"></div>
+        <span class="tpill off-p" data--h-bstatus="0OBSERVED">Completed</span>
+        <div class="tl-title" data--h-bstatus="0OBSERVED">CS8 Basics Diploma</div>
+        <div class="tl-sub" data--h-bstatus="0OBSERVED">EraaSoft — 4 Months</div>
+        <p class="tl-desc" data--h-bstatus="0OBSERVED">Foundation course covering core Computer Science concepts, Algorithms, Logic Building, and Java fundamentals. Established a strong problem-solving mindset and programming foundations, culminating in an official certification.</p>
       </div>
-      <div class="tl">
-        <div class="tldot off"></div>
-        <span class="tpill off-p">2nd Year</span>
-        <div class="tl-title">Information Systems Student</div>
-        <div class="tl-sub">Cairo Higher Institute (New Cairo)</div>
-        <p class="tl-desc">Academic studies in Computer Science, Systems Management, and Database fundamentals — providing a strong theoretical backbone to complement practical development skills built through EraaSoft training.</p>
+      <div class="tl" data--h-bstatus="0OBSERVED">
+        <div class="tldot off" data--h-bstatus="0OBSERVED"></div>
+        <span class="tpill off-p" data--h-bstatus="0OBSERVED">2nd Year</span>
+        <div class="tl-title" data--h-bstatus="0OBSERVED">Information Systems Student</div>
+        <div class="tl-sub" data--h-bstatus="0OBSERVED">Cairo Higher Institute (New Cairo)</div>
+        <p class="tl-desc" data--h-bstatus="0OBSERVED">Academic studies in Computer Science, Systems Management, and Database fundamentals — providing a strong theoretical backbone to complement practical development skills built through EraaSoft training.</p>
       </div>
     </div>
   </section>
 
   <!-- PROJECTS -->
-  <section class="card" id="projects">
-    <div class="sec-label">What I've Built</div>
-    <h2>Featured Projects</h2>
-    <div class="pgrid">
-      <a href="https://github.com/AhmedMohamed852/restaurant-management-system" target="_blank" class="pcard">
-        <div class="phdr"><div class="pico"><i class="fas fa-utensils"></i></div><div class="pname">Restaurant Management System</div></div>
-        <p class="pdesc">A full backend solution built with Spring Boot for managing orders, digital menus, and real-time staff operations. Includes role-based access control and a fully RESTful API.</p>
-        <div class="ptags"><span class="ptag">Spring Boot</span><span class="ptag">REST API</span><span class="ptag">MySQL</span><span class="ptag">Spring Security</span></div>
-        <div class="plink">View on GitHub →</div>
+  <section class="card" id="projects" data--h-bstatus="0OBSERVED">
+    <div class="sec-label" data--h-bstatus="0OBSERVED">What I've Built</div>
+    <h2 data--h-bstatus="0OBSERVED">Featured Projects</h2>
+    <div class="pgrid" data--h-bstatus="0OBSERVED">
+      <a href="https://github.com/AhmedMohamed852/restaurant-management-system" target="_blank" class="pcard" data--h-bstatus="0OBSERVED">
+        <div class="phdr" data--h-bstatus="0OBSERVED"><div class="pico" data--h-bstatus="0OBSERVED"><i class="fas fa-utensils" data--h-bstatus="0OBSERVED"></i></div><div class="pname" data--h-bstatus="0OBSERVED">Restaurant Management System</div></div>
+        <p class="pdesc" data--h-bstatus="0OBSERVED">A full backend solution built with Spring Boot for managing orders, digital menus, and real-time staff operations. Includes role-based access control and a fully RESTful API.</p>
+        <div class="ptags" data--h-bstatus="0OBSERVED"><span class="ptag" data--h-bstatus="0OBSERVED">Spring Boot</span><span class="ptag" data--h-bstatus="0OBSERVED">REST API</span><span class="ptag" data--h-bstatus="0OBSERVED">MySQL</span><span class="ptag" data--h-bstatus="0OBSERVED">Spring Security</span></div>
+        <div class="plink" data--h-bstatus="0OBSERVED">View on GitHub →</div>
       </a>
-      <a href="https://github.com/AhmedMohamed852/vehicle-registration-licensing-system" target="_blank" class="pcard">
-        <div class="phdr"><div class="pico"><i class="fas fa-car"></i></div><div class="pname">Vehicle Registration &amp; Licensing System</div></div>
-        <p class="pdesc">A secure backend system for tracking vehicle registration, maintenance schedules, and analytics — built using Spring Data JPA and a clean layered architecture.</p>
-        <div class="ptags"><span class="ptag">Spring Boot</span><span class="ptag">Spring Data JPA</span><span class="ptag">Oracle</span><span class="ptag">JWT</span></div>
-        <div class="plink">View on GitHub →</div>
+      <a href="https://github.com/AhmedMohamed852/vehicle-registration-licensing-system" target="_blank" class="pcard" data--h-bstatus="0OBSERVED">
+        <div class="phdr" data--h-bstatus="0OBSERVED"><div class="pico" data--h-bstatus="0OBSERVED"><i class="fas fa-car" data--h-bstatus="0OBSERVED"></i></div><div class="pname" data--h-bstatus="0OBSERVED">Vehicle Registration &amp; Licensing System</div></div>
+        <p class="pdesc" data--h-bstatus="0OBSERVED">A secure backend system for tracking vehicle registration, maintenance schedules, and analytics — built using Spring Data JPA and a clean layered architecture.</p>
+        <div class="ptags" data--h-bstatus="0OBSERVED"><span class="ptag" data--h-bstatus="0OBSERVED">Spring Boot</span><span class="ptag" data--h-bstatus="0OBSERVED">Spring Data JPA</span><span class="ptag" data--h-bstatus="0OBSERVED">Oracle</span><span class="ptag" data--h-bstatus="0OBSERVED">JWT</span></div>
+        <div class="plink" data--h-bstatus="0OBSERVED">View on GitHub →</div>
       </a>
     </div>
   </section>
 
   <!-- CERTIFICATIONS -->
-  <section class="card" id="certs">
-    <div class="sec-label">Credentials</div>
-    <h2>Certifications</h2>
-    <a href="https://drive.google.com/drive/folders/1tDtLpSs1HXQKWN_flDaaVqVTwTnCM5kz" target="_blank" class="ccard">
-      <div class="cico"><i class="fas fa-certificate"></i></div>
-      <div><div class="cname">Java CS8 Basics Certificate</div><div class="csub">EraaSoft · Foundation in Java, Algorithms &amp; Logic Building</div></div>
+  <section class="card" id="certs" data--h-bstatus="0OBSERVED">
+    <div class="sec-label" data--h-bstatus="0OBSERVED">Credentials</div>
+    <h2 data--h-bstatus="0OBSERVED">Certifications</h2>
+    <a href="https://drive.google.com/drive/folders/1tDtLpSs1HXQKWN_flDaaVqVTwTnCM5kz" target="_blank" class="ccard" data--h-bstatus="0OBSERVED">
+      <div class="cico" data--h-bstatus="0OBSERVED"><i class="fas fa-certificate" data--h-bstatus="0OBSERVED"></i></div>
+      <div data--h-bstatus="0OBSERVED"><div class="cname" data--h-bstatus="0OBSERVED">Java CS8 Basics Certificate</div><div class="csub" data--h-bstatus="0OBSERVED">EraaSoft · Foundation in Java, Algorithms &amp; Logic Building</div></div>
+      <div class="cext" data--h-bstatus="0OBSERVED"><i class="fas fa-external-link-alt" data--h-bstatus="0OBSERVED"></i></div>
+    </a>
+    <a href="https://drive.google.com/file/d/16DQSf66WsH4CAVCWEHh-8_JupVK6Ra5t/view?usp=sharing" target="_blank" class="ccard" style="margin-top:.75rem;">
+      <div class="cico"><i class="fas fa-award"></i></div>
+      <div><div class="cname">Claude 101 Certificate</div><div class="csub">Anthropic · Claude AI Course Certificate</div></div>
       <div class="cext"><i class="fas fa-external-link-alt"></i></div>
     </a>
   </section>
 
   <!-- CONTACT -->
-  <section class="card" id="contact">
-    <div class="sec-label">Let's Talk</div>
-    <h2>Get In Touch</h2>
-    <p style="font-size:.85rem;color:var(--sub);margin-bottom:1.6rem;line-height:1.75;">Whether you have a freelance project, a full-time backend role, or just want to connect — my inbox is always open. Choose how you'd like to reach me:</p>
-    <div class="cgrid">
-      <div>
-        <div class="crow"><i class="fas fa-envelope"></i><a href="mailto:Ahmed.mohammed.swe1@gmail.com">Ahmed.mohammed.swe1@gmail.com</a></div>
-        <div class="crow"><i class="fab fa-whatsapp"></i><a href="https://wa.me/201018478430" target="_blank">+20 101 847 8430</a></div>
-        <div class="crow"><i class="fab fa-linkedin"></i><a href="https://www.linkedin.com/in/ahmed-mohamed852" target="_blank">linkedin.com/in/ahmed-mohamed852</a></div>
-        <div class="crow"><i class="fas fa-map-marker-alt"></i><span>New Cairo, Egypt</span></div>
+  <section class="card" id="contact" data--h-bstatus="0OBSERVED">
+    <div class="sec-label" data--h-bstatus="0OBSERVED">Let's Talk</div>
+    <h2 data--h-bstatus="0OBSERVED">Get In Touch</h2>
+    <p style="font-size:.85rem;color:var(--sub);margin-bottom:1.6rem;line-height:1.75;" data--h-bstatus="0OBSERVED">Whether you have a freelance project, a full-time backend role, or just want to connect — my inbox is always open. Choose how you'd like to reach me:</p>
+    <div class="cgrid" data--h-bstatus="0OBSERVED">
+      <div data--h-bstatus="0OBSERVED">
+        <div class="crow" data--h-bstatus="0OBSERVED"><i class="fas fa-envelope" data--h-bstatus="0OBSERVED"></i><a href="mailto:Ahmed.mohammed.swe1@gmail.com" data--h-bstatus="0OBSERVED">Ahmed.mohammed.swe1@gmail.com</a></div>
+        <div class="crow" data--h-bstatus="0OBSERVED"><i class="fab fa-whatsapp" data--h-bstatus="0OBSERVED"></i><a href="https://wa.me/201018478430" target="_blank" data--h-bstatus="0OBSERVED">+20 101 847 8430</a></div>
+        <div class="crow" data--h-bstatus="0OBSERVED"><i class="fab fa-linkedin" data--h-bstatus="0OBSERVED"></i><a href="https://www.linkedin.com/in/ahmed-mohamed852" target="_blank" data--h-bstatus="0OBSERVED">linkedin.com/in/ahmed-mohamed852</a></div>
+        <div class="crow" data--h-bstatus="0OBSERVED"><i class="fas fa-map-marker-alt" data--h-bstatus="0OBSERVED"></i><span data--h-bstatus="0OBSERVED">New Cairo, Egypt</span></div>
       </div>
-      <div class="fgrp">
-        <div class="frow">
-          <input type="text" id="fname" placeholder="First Name">
-          <input type="text" id="lname" placeholder="Last Name">
+      <div class="fgrp" data--h-bstatus="0OBSERVED">
+        <div class="frow" data--h-bstatus="0OBSERVED">
+          <input type="text" id="fname" placeholder="First Name" data--h-bstatus="0OBSERVED">
+          <input type="text" id="lname" placeholder="Last Name" data--h-bstatus="0OBSERVED">
         </div>
-        <input type="email" id="femail" placeholder="Your Email">
-        <input type="text" id="fsubj" placeholder="Subject">
-        <textarea id="fmsg" placeholder="Your message..." rows="3"></textarea>
-        <div class="send-btns">
-          <button class="sbtn sbtn-wa" onclick="sendWhatsApp()">
-            <i class="fab fa-whatsapp"></i> WhatsApp
+        <input type="email" id="femail" placeholder="Your Email" data--h-bstatus="0OBSERVED">
+        <input type="text" id="fsubj" placeholder="Subject" data--h-bstatus="0OBSERVED">
+        <textarea id="fmsg" placeholder="Your message..." rows="3" data--h-bstatus="0OBSERVED"></textarea>
+        <div class="send-btns" data--h-bstatus="0OBSERVED">
+          <button class="sbtn sbtn-wa" onclick="sendWhatsApp()" data--h-bstatus="0OBSERVED">
+            <i class="fab fa-whatsapp" data--h-bstatus="0OBSERVED"></i> WhatsApp
           </button>
-          <button class="sbtn sbtn-em" onclick="sendEmail()">
-            <i class="fas fa-envelope"></i> Email
+          <button class="sbtn sbtn-em" onclick="sendEmail()" data--h-bstatus="0OBSERVED">
+            <i class="fas fa-envelope" data--h-bstatus="0OBSERVED"></i> Email
           </button>
         </div>
-        <p style="font-size:.68rem;color:var(--dim);text-align:center;margin-top:.3rem;">WhatsApp opens the app directly · Email opens your mail client</p>
+        <p style="font-size:.68rem;color:var(--dim);text-align:center;margin-top:.3rem;" data--h-bstatus="0OBSERVED">WhatsApp opens the app directly · Email opens your mail client</p>
       </div>
     </div>
   </section>
 
 </main>
 
-<footer>
-  <div class="ficons">
-    <a href="https://github.com/AhmedMohamed852" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
-    <a href="https://www.linkedin.com/in/ahmed-mohamed852" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
-    <a href="https://wa.me/201018478430" target="_blank" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
-    <a href="mailto:Ahmed.mohammed.swe1@gmail.com" title="Email"><i class="fas fa-envelope"></i></a>
+<footer data--h-bstatus="0OBSERVED">
+  <div class="ficons" data--h-bstatus="0OBSERVED">
+    <a href="https://github.com/AhmedMohamed852" target="_blank" title="GitHub" data--h-bstatus="0OBSERVED"><i class="fab fa-github" data--h-bstatus="0OBSERVED"></i></a>
+    <a href="https://www.linkedin.com/in/ahmed-mohamed852" target="_blank" title="LinkedIn" data--h-bstatus="0OBSERVED"><i class="fab fa-linkedin" data--h-bstatus="0OBSERVED"></i></a>
+    <a href="https://wa.me/201018478430" target="_blank" title="WhatsApp" data--h-bstatus="0OBSERVED"><i class="fab fa-whatsapp" data--h-bstatus="0OBSERVED"></i></a>
+    <a href="mailto:Ahmed.mohammed.swe1@gmail.com" title="Email" data--h-bstatus="0OBSERVED"><i class="fas fa-envelope" data--h-bstatus="0OBSERVED"></i></a>
   </div>
-  <div class="fcopy">Designed &amp; Built by Ahmed Mohamed · © 2026</div>
+  <div class="fcopy" data--h-bstatus="0OBSERVED">Designed &amp; Built by Ahmed Mohamed · © 2026</div>
 </footer>
 
-<script>
+<script data--h-bstatus="0OBSERVED">
 /* ══════════════════════════════════════
    1. SCROLL PROGRESS BAR
 ══════════════════════════════════════ */
@@ -801,5 +852,6 @@ addEventListener('resize', resize);
 addEventListener('mousemove', e => { mouse.x = e.clientX; mouse.y = e.clientY; });
 addEventListener('mouseleave', () => { mouse.x = -9999; mouse.y = -9999; });
 </script>
-</body>
-</html>
+
+
+</body></html>
