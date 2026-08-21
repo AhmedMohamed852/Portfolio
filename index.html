@@ -86,7 +86,7 @@ nav{position:fixed;top:0;width:100%;z-index:1000;background:var(--nav);backdrop-
 
 /* SOFTWARE ENGINEER TAG */
 .swe-tag{font-family:'JetBrains Mono',monospace;font-size:1rem;font-weight:500;margin-bottom:1.3rem;display:flex;align-items:center;justify-content:center;gap:0;opacity:.85;min-height:1.5rem}
-.swe-lt{color:var(--pu);font-weight:700}.swe-tx{color:var(--ac)}.swe-sl{color:var(--pu);font-weight:700}
+.swe-lt{color:var(--pu);font-weight:700;transition:opacity .18s}.swe-tx{color:var(--ac)}.swe-sl{color:var(--pu);font-weight:700;transition:opacity .18s}
 
 /* CV SECTION */
 .cv-wrap{max-width:820px;margin:0 auto}
@@ -202,7 +202,13 @@ nav{position:fixed;top:0;width:100%;z-index:1000;background:var(--nav);backdrop-
 /* CONTACT */
 .contact-card{max-width:580px;margin:0 auto;background:rgba(255,255,255,.05);border:1px solid rgba(0,203,168,.14);border-radius:22px;padding:2.5rem}
 .contact-card h3{color:#fff;font-size:1.18rem;font-weight:800;margin-bottom:.38rem}
-.contact-card>p{color:rgba(255,255,255,.42);font-size:.86rem;margin-bottom:1.7rem}
+.contact-card>p{color:rgba(255,255,255,.42);font-size:.86rem;margin-bottom:1.4rem}
+/* Contact method tabs */
+.ct-tabs{display:flex;gap:.4rem;background:rgba(255,255,255,.06);border-radius:12px;padding:.3rem;margin-bottom:1.5rem}
+.ct-tab{flex:1;display:flex;align-items:center;justify-content:center;gap:.45rem;padding:.6rem;border:none;border-radius:9px;cursor:pointer;font-weight:700;font-size:.82rem;background:transparent;color:rgba(255,255,255,.4);transition:all .25s;font-family:'Inter',sans-serif}
+.ct-tab.active{background:rgba(255,255,255,.1);color:#fff}
+.ct-tab.active.wa{background:rgba(37,211,102,.18);color:#25d366}
+.ct-tab i{font-size:.9rem}
 .fg{margin-bottom:.95rem}
 .fg input,.fg textarea{width:100%;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.1);border-radius:12px;padding:.82rem 1.1rem;color:#fff;font-family:'Inter',sans-serif;font-size:.88rem;outline:none;transition:border-color .3s}
 .fg input::placeholder,.fg textarea::placeholder{color:rgba(255,255,255,.27)}
@@ -260,8 +266,9 @@ footer span.hl{color:var(--ac);font-weight:700}
 #scrollBar{position:fixed;top:0;left:0;height:3px;width:0%;background:linear-gradient(90deg,var(--ac),var(--pu));z-index:9998;transition:width .08s linear;pointer-events:none}
 
 /* PHOTO HOVER */
-.h-photo{transition:transform .4s ease,box-shadow .4s ease,border-color .4s ease}
-.h-photo-wrap:hover .h-photo{transform:scale(1.04);box-shadow:0 30px 70px rgba(0,0,0,.25),0 0 0 4px var(--ac),0 0 42px rgba(0,212,170,.3);border-color:var(--ac)}
+.h-photo-wrap{overflow:visible}
+.h-photo{transition:transform .45s cubic-bezier(.34,1.56,.64,1),box-shadow .45s ease,border-color .4s ease,filter .4s ease}
+.h-photo-wrap:hover .h-photo{transform:scale(1.035);border-color:rgba(0,212,170,.85);filter:brightness(1.04);box-shadow:0 28px 65px rgba(0,0,0,.2),0 0 70px rgba(0,212,170,.28),0 0 130px rgba(0,212,170,.12)}
 
 /* OPEN TO WORK BADGE */
 .otw-badge{position:absolute;bottom:-14px;left:50%;transform:translateX(-50%);background:linear-gradient(135deg,var(--ac),var(--pu));color:#fff;font-size:.72rem;font-weight:800;padding:.32rem 1rem;border-radius:50px;display:flex;align-items:center;gap:.42rem;white-space:nowrap;box-shadow:0 4px 18px rgba(0,212,170,.38);letter-spacing:.03em}
@@ -356,7 +363,7 @@ footer span.hl{color:var(--ac);font-weight:700}
 <section id="home">
   <canvas id="pcanvas"></canvas>
   <div class="hcont">
-    <div class="swe-tag"><span class="swe-lt">&lt;</span><span class="swe-tx" id="sweEl"></span><span class="swe-sl" id="sweClose">&nbsp;/&gt;</span></div>
+    <div class="swe-tag"><span class="swe-lt" id="sweLt" style="opacity:0">&lt;</span><span class="swe-tx" id="sweEl"></span><span class="swe-sl" id="sweClose" style="opacity:0">/&gt;</span></div>
     <p class="h-eye">HI THERE, I'M</p>
     <h1 class="h-name"><span class="dk">AHMED </span><span class="tl">EL-BUHAIRY</span></h1>
     <p class="h-typing"><span id="typeEl"></span><span class="cursor"></span></p>
@@ -565,15 +572,45 @@ footer span.hl{color:var(--ac);font-weight:700}
   <div class="contact-card fi">
     <h3>Have a project in mind?</h3>
     <p>I'm always open to new opportunities, projects, and collaborations.</p>
-    <form id="cForm">
-      <div class="fg"><input type="text"  id="cName"  placeholder="Your Name"    required></div>
-      <div class="fg"><input type="email" id="cEmail" placeholder="Your Email"   required></div>
-      <div class="fg"><textarea            id="cMsg"   placeholder="Your Message" required></textarea></div>
-      <button type="submit" class="btn-p" id="cBtn" style="width:100%;justify-content:center">Send Message <i class="fas fa-paper-plane"></i></button>
-      <p class="msg-ok"  id="msgOk">✅ Message sent! I'll reply soon.</p>
-      <p class="msg-err" id="msgErr">❌ Something went wrong. Try again.</p>
-    </form>
-    <div class="contact-bot">
+
+    <!-- Method Tabs -->
+    <div class="ct-tabs">
+      <button class="ct-tab active" id="tabEmail" onclick="switchContact('email')">
+        <i class="fas fa-envelope"></i> Email
+      </button>
+      <button class="ct-tab wa" id="tabWA" onclick="switchContact('wa')">
+        <i class="fab fa-whatsapp"></i> WhatsApp
+      </button>
+    </div>
+
+    <!-- EMAIL FORM -->
+    <div id="contactEmail">
+      <form id="cForm">
+        <div class="fg"><input type="text"  id="cName"  placeholder="Your Name"    required></div>
+        <div class="fg"><input type="email" id="cEmail" placeholder="Your Email"   required></div>
+        <div class="fg"><textarea            id="cMsg"   placeholder="Your Message" required></textarea></div>
+        <button type="submit" class="btn-p" id="cBtn" style="width:100%;justify-content:center">
+          Send Email <i class="fas fa-paper-plane"></i>
+        </button>
+        <p class="msg-ok"  id="msgOk">✅ Message sent! I'll reply soon.</p>
+        <p class="msg-err" id="msgErr">❌ Something went wrong. Try again.</p>
+      </form>
+    </div>
+
+    <!-- WHATSAPP FORM -->
+    <div id="contactWA" style="display:none">
+      <div class="fg"><input type="text" id="waName" placeholder="Your Name" required></div>
+      <div class="fg"><textarea id="waMsg" placeholder="Your Message…" style="height:130px;resize:vertical" required></textarea></div>
+      <button onclick="sendWhatsApp()" class="btn-p" style="width:100%;justify-content:center;background:linear-gradient(135deg,#25d366,#128c7e)">
+        Send via WhatsApp <i class="fab fa-whatsapp"></i>
+      </button>
+      <p style="color:rgba(255,255,255,.28);font-size:.76rem;text-align:center;margin-top:.7rem">
+        <i class="fas fa-info-circle" style="color:var(--ac)"></i>
+        سيفتح WhatsApp Web برسالتك جاهزة — بكليك واحد ✓
+      </p>
+    </div>
+
+    <div class="contact-bot" style="margin-top:1.3rem">
       <div class="cmet copyable" onclick="copyText('+201018478430')" title="Click to copy"><i class="fab fa-whatsapp"></i><span>+20 101 847 8430</span></div>
       <div class="cmet copyable" onclick="copyText('Ahmed.mohammed.swe1@gmail.com')" title="Click to copy"><i class="fas fa-envelope"></i><span>Ahmed.mohammed.swe1@gmail.com</span></div>
     </div>
@@ -815,14 +852,20 @@ function closeMob(){document.getElementById('mobMenu').classList.remove('open')}
   const txt='SoftwareEngineer';
   const el=document.getElementById('sweEl');
   const cl=document.getElementById('sweClose');
+  const lt=document.getElementById('sweLt');
   if(!el)return;
   let ci=0,del=false;
+  function setBrackets(visible){
+    const op=visible?'1':'0';
+    if(lt)lt.style.opacity=op;
+    if(cl)cl.style.opacity=op;
+  }
   function go(){
     el.textContent=del?txt.substring(0,ci--):txt.substring(0,ci++);
-    if(cl)cl.style.opacity=ci>0?'1':'0';
+    setBrackets(ci>0);
     let d=del?45:85;
     if(!del&&ci>txt.length){d=2800;del=true}
-    else if(del&&ci<0){del=false;ci=0;d=700;if(cl)cl.style.opacity='0'}
+    else if(del&&ci<0){del=false;ci=0;d=700;setBrackets(false)}
     setTimeout(go,d);
   }
   setTimeout(go,400);
@@ -1334,6 +1377,33 @@ window.addEventListener('scroll',()=>{
   const docH=document.documentElement.scrollHeight-window.innerHeight;
   scrollBarEl.style.width=(docH>0?(scrollY/docH)*100:0)+'%';
 });
+
+/* ── CONTACT METHOD SWITCH ── */
+function switchContact(method){
+  const emailTab=document.getElementById('tabEmail');
+  const waTab=document.getElementById('tabWA');
+  const emailForm=document.getElementById('contactEmail');
+  const waForm=document.getElementById('contactWA');
+  if(method==='email'){
+    emailTab.classList.add('active');waTab.classList.remove('active');
+    emailForm.style.display='block';waForm.style.display='none';
+  } else {
+    waTab.classList.add('active');emailTab.classList.remove('active');
+    emailForm.style.display='none';waForm.style.display='block';
+  }
+}
+function sendWhatsApp(){
+  const name=document.getElementById('waName').value.trim();
+  const msg=document.getElementById('waMsg').value.trim();
+  if(!name||!msg){
+    const btn=document.querySelector('#contactWA .btn-p');
+    btn.textContent='⚠️ Fill in all fields';
+    setTimeout(()=>{btn.innerHTML='Send via WhatsApp <i class="fab fa-whatsapp"></i>'},2000);
+    return;
+  }
+  const text=`Hi Ahmed! I'm ${name}.\n\n${msg}`;
+  window.open(`https://wa.me/201018478430?text=${encodeURIComponent(text)}`,'_blank');
+}
 
 /* ── COPY TO CLIPBOARD ── */
 function copyText(text){
