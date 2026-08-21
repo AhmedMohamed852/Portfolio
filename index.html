@@ -256,6 +256,37 @@ footer span.hl{color:var(--ac);font-weight:700}
 .admin-tab{flex:1;padding:.52rem .8rem;border:none;border-radius:7px;cursor:pointer;font-weight:700;font-size:.8rem;background:transparent;color:rgba(255,255,255,.45);transition:all .25s;font-family:'Inter',sans-serif}
 .admin-tab.tab-active{background:rgba(0,203,168,.18);color:var(--ac)}
 
+/* SCROLL PROGRESS BAR */
+#scrollBar{position:fixed;top:0;left:0;height:3px;width:0%;background:linear-gradient(90deg,var(--ac),var(--pu));z-index:9998;transition:width .08s linear;pointer-events:none}
+
+/* PHOTO HOVER */
+.h-photo{transition:transform .4s ease,box-shadow .4s ease,border-color .4s ease}
+.h-photo-wrap:hover .h-photo{transform:scale(1.04);box-shadow:0 30px 70px rgba(0,0,0,.25),0 0 0 4px var(--ac),0 0 42px rgba(0,212,170,.3);border-color:var(--ac)}
+
+/* OPEN TO WORK BADGE */
+.otw-badge{position:absolute;bottom:-14px;left:50%;transform:translateX(-50%);background:linear-gradient(135deg,var(--ac),var(--pu));color:#fff;font-size:.72rem;font-weight:800;padding:.32rem 1rem;border-radius:50px;display:flex;align-items:center;gap:.42rem;white-space:nowrap;box-shadow:0 4px 18px rgba(0,212,170,.38);letter-spacing:.03em}
+.otw-dot{width:7px;height:7px;background:#fff;border-radius:50%;flex-shrink:0;animation:otwPulse 1.6s ease-in-out infinite}
+@keyframes otwPulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.55;transform:scale(.75)}}
+
+/* PROJECT FILTERS */
+.proj-filters{max-width:880px;margin:0 auto 2rem;display:flex;flex-wrap:wrap;gap:.5rem;justify-content:center}
+.filter-btn{padding:.42rem 1.1rem;border-radius:50px;border:1.5px solid var(--bdr);background:var(--card);color:var(--tx2);font-size:.78rem;font-weight:600;cursor:pointer;transition:all .25s;font-family:'Inter',sans-serif}
+.filter-btn:hover,.filter-btn.active{background:var(--ac);color:#fff;border-color:var(--ac)}
+
+/* COPY CURSOR */
+.cmet.copyable,.footer-contact span.copyable{cursor:pointer;transition:color .2s}
+.cmet.copyable:hover,.footer-contact span.copyable:hover{color:var(--ac)}
+.cmet.copyable:hover i,.footer-contact span.copyable:hover i{color:#fff}
+
+/* COPY TOAST */
+#copyToast{position:fixed;bottom:5.5rem;left:50%;transform:translateX(-50%) translateY(16px);background:var(--ac);color:#fff;padding:.58rem 1.4rem;border-radius:50px;font-size:.82rem;font-weight:700;z-index:10002;opacity:0;transition:all .3s ease;pointer-events:none;box-shadow:0 6px 20px rgba(0,212,170,.4)}
+#copyToast.show{opacity:1;transform:translateX(-50%) translateY(0)}
+
+/* CONTRIBUTION GRAPH */
+.contrib-wrap{max-width:880px;margin:2rem auto 0;background:var(--card);border-radius:16px;padding:1.4rem 1.6rem;box-shadow:var(--cshadow);border:1px solid var(--bdr)}
+.contrib-label{font-size:.73rem;font-weight:700;color:var(--tx2);text-transform:uppercase;letter-spacing:.12em;margin-bottom:1rem}
+.contrib-wrap img{width:100%;border-radius:6px;opacity:.82;display:block}
+
 /* FADE-IN */
 .fi{opacity:0;transform:translateY(26px);transition:opacity .65s ease,transform .65s ease}
 .fi.vs{opacity:1;transform:translateY(0)}
@@ -273,6 +304,12 @@ footer span.hl{color:var(--ac);font-weight:700}
 </style>
 </head>
 <body>
+
+<!-- SCROLL PROGRESS -->
+<div id="scrollBar"></div>
+
+<!-- COPY TOAST -->
+<div id="copyToast">✓ Copied!</div>
 
 <!-- LOADER -->
 <div id="ldr">
@@ -341,6 +378,7 @@ footer span.hl{color:var(--ac);font-weight:700}
            onerror="this.style.display='none';document.getElementById('photoFallback').style.display='flex'">
       <div id="photoFallback" class="h-photo-fallback">AEB</div>
       <div class="h-photo-fade"></div>
+      <div class="otw-badge"><span class="otw-dot"></span> Open to Work</div>
     </div>
   </div>
 </section>
@@ -436,6 +474,7 @@ footer span.hl{color:var(--ac);font-weight:700}
   <p class="s-eye">MY RECENT WORK</p>
   <h2 class="s-title">My <span class="tl">Projects</span></h2>
   <div class="s-div"></div>
+  <div class="proj-filters" id="projFilters"></div>
   <div class="proj-grid" id="projGrid"></div>
 </section>
 
@@ -454,6 +493,11 @@ footer span.hl{color:var(--ac);font-weight:700}
   <div class="s-div"></div>
   <div class="stats-grid fi" id="statsEl">
     <div class="stat-card"><div class="stat-ico"><i class="fas fa-spinner fa-spin"></i></div><div class="stat-num">—</div><div class="stat-lbl">Loading…</div></div>
+  </div>
+  <div class="contrib-wrap fi">
+    <div class="contrib-label">📅 Contribution Activity</div>
+    <img src="https://ghchart.rshah.org/00d4aa/AhmedMohamed852" alt="GitHub Contribution Graph" loading="lazy"
+         onerror="this.parentElement.style.display='none'">
   </div>
 </section>
 
@@ -530,8 +574,8 @@ footer span.hl{color:var(--ac);font-weight:700}
       <p class="msg-err" id="msgErr">❌ Something went wrong. Try again.</p>
     </form>
     <div class="contact-bot">
-      <div class="cmet"><i class="fab fa-whatsapp"></i><span>+20 101 847 8430</span></div>
-      <div class="cmet"><i class="fas fa-envelope"></i><span>Ahmed.mohammed.swe1@gmail.com</span></div>
+      <div class="cmet copyable" onclick="copyText('+201018478430')" title="Click to copy"><i class="fab fa-whatsapp"></i><span>+20 101 847 8430</span></div>
+      <div class="cmet copyable" onclick="copyText('Ahmed.mohammed.swe1@gmail.com')" title="Click to copy"><i class="fas fa-envelope"></i><span>Ahmed.mohammed.swe1@gmail.com</span></div>
     </div>
   </div>
 </section>
@@ -539,8 +583,8 @@ footer span.hl{color:var(--ac);font-weight:700}
 <!-- FOOTER -->
 <footer>
   <div class="footer-contact">
-    <span><i class="fab fa-whatsapp"></i> +20 101 847 8430</span>
-    <span><i class="fas fa-envelope"></i> Ahmed.mohammed.swe1@gmail.com</span>
+    <span class="copyable" onclick="copyText('+201018478430')" title="Click to copy"><i class="fab fa-whatsapp"></i> +20 101 847 8430</span>
+    <span class="copyable" onclick="copyText('Ahmed.mohammed.swe1@gmail.com')" title="Click to copy"><i class="fas fa-envelope"></i> Ahmed.mohammed.swe1@gmail.com</span>
   </div>
   <p>© 2026 <span class="hl">Ahmed El-Buhairy</span>. All Rights Reserved.</p>
 </footer>
@@ -883,7 +927,7 @@ function renderProjects(){
     const demoBtn=p.video
       ?`<button class="btn-demo" onclick="openVideoModal('${p.video}','${p.name.replace(/'/g,"\\'")}')"><i class="fas fa-play-circle"></i> Watch Demo</button>`
       :'';
-    const c=document.createElement('div');c.className='proj-card fi';
+    const c=document.createElement('div');c.className='proj-card fi';c.dataset.tech=p.tech.join(',');
     c.innerHTML=`
       <div class="proj-prev">
         <div class="proj-term"><div class="t-hd"><div class="dot r"></div><div class="dot y"></div><div class="dot g"></div></div>${lines}</div>
@@ -900,6 +944,7 @@ function renderProjects(){
       </div>`;
     g.appendChild(c);
   });
+  renderFilters();
   initFI();
 }
 renderProjects();
@@ -1281,9 +1326,49 @@ function closeM(id){
 function openCV(){document.getElementById('mCV').classList.add('on')}
 document.querySelectorAll('.mover').forEach(el=>el.addEventListener('click',e=>{if(e.target===el)closeM(el.id)}));
 
-/* ── BACK TO TOP ── */
+/* ── SCROLL PROGRESS + BACK TO TOP ── */
 const btt=document.getElementById('btt');
-window.addEventListener('scroll',()=>btt.classList.toggle('show',scrollY>400));
+const scrollBarEl=document.getElementById('scrollBar');
+window.addEventListener('scroll',()=>{
+  btt.classList.toggle('show',scrollY>400);
+  const docH=document.documentElement.scrollHeight-window.innerHeight;
+  scrollBarEl.style.width=(docH>0?(scrollY/docH)*100:0)+'%';
+});
+
+/* ── COPY TO CLIPBOARD ── */
+function copyText(text){
+  navigator.clipboard.writeText(text).then(()=>{
+    const t=document.getElementById('copyToast');
+    t.classList.add('show');
+    setTimeout(()=>t.classList.remove('show'),2200);
+  }).catch(()=>{
+    // fallback for older browsers
+    const ta=document.createElement('textarea');ta.value=text;
+    document.body.appendChild(ta);ta.select();
+    document.execCommand('copy');document.body.removeChild(ta);
+    const t=document.getElementById('copyToast');
+    t.classList.add('show');setTimeout(()=>t.classList.remove('show'),2200);
+  });
+}
+
+/* ── PROJECT FILTER ── */
+function renderFilters(){
+  const allTechs=[...new Set(PROJECTS.flatMap(p=>p.tech))];
+  const el=document.getElementById('projFilters');
+  if(!el)return;
+  el.innerHTML=`<button class="filter-btn active" onclick="filterProjects('all',this)">All</button>`;
+  allTechs.forEach(t=>{
+    el.innerHTML+=`<button class="filter-btn" onclick="filterProjects('${t.replace(/'/g,"\\'")}',this)">${t}</button>`;
+  });
+}
+function filterProjects(tech,btn){
+  document.querySelectorAll('.filter-btn').forEach(b=>b.classList.remove('active'));
+  btn.classList.add('active');
+  document.querySelectorAll('.proj-card').forEach(card=>{
+    const techs=card.dataset.tech||'';
+    card.style.display=(tech==='all'||techs.includes(tech))?'':'none';
+  });
+}
 
 /* ── FADE-IN ── */
 function initFI(){
